@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Financial Data Chatbot</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="shell">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <span class="logo-icon">📈</span>
+        <span class="logo-text">FinChat</span>
+      </div>
+      <nav class="nav">
+        <p class="nav-label">Quick questions</p>
+        <button class="suggestion" data-q="Which fund has the best YTD performance?">Best YTD performance</button>
+        <button class="suggestion" data-q="How many trades did HoldCo 1 execute?">HoldCo 1 trade count</button>
+        <button class="suggestion" data-q="Give me the best 3 funds by year-to-date profit">Top 3 funds by profit</button>
+        <button class="suggestion" data-q="What is the total market value of all holdings?">Total market value</button>
+        <button class="suggestion" data-q="Which security types are traded most?">Most-traded security types</button>
+      </nav>
+      <div class="sidebar-footer">
+        <span class="badge">Powered by GPT-4o-mini + DuckDB</span>
+      </div>
+    </aside>
+
+    <!-- Main chat area -->
+    <main class="chat-area">
+      <header class="chat-header">
+        <h1>Financial Portfolio Assistant</h1>
+        <p class="subtitle">Ask anything about your trades and holdings in plain English.</p>
+      </header>
+
+      <div class="messages" id="messages">
+        <div class="message assistant">
+          <div class="avatar">🤖</div>
+          <div class="bubble">
+            Hello! I can answer questions about your fund portfolio — trades, holdings,
+            YTD performance, market values, and more. What would you like to know?
+          </div>
+        </div>
+      </div>
+
+      <form class="input-bar" id="chat-form" autocomplete="off">
+        <input
+          id="question-input"
+          type="text"
+          placeholder="Ask a question about the funds…"
+          maxlength="1000"
+          required
+        />
+        <button type="submit" id="send-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+          </svg>
+        </button>
+      </form>
+    </main>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
